@@ -1,6 +1,6 @@
 package main
 
-import "adventofcode/day_3"
+import "adventofcode/day_4"
 
 func main() {
 	// day_1.Day1Star1()
@@ -8,5 +8,6 @@ func main() {
 	// day_2.Day2Star1()
 	// day_2.Day2Star2()
 	// day_3.Day3Star1()
-	day_3.Day3Star2()
+	// day_3.Day3Star2()
+	day_4.Day4Star1()
 }
