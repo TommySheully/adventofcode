@@ -9,5 +9,6 @@ func main() {
 	// day_2.Day2Star2()
 	// day_3.Day3Star1()
 	// day_3.Day3Star2()
-	day_4.Day4Star1()
+	// day_4.Day4Star1()
+	day_4.Day4Star2()
 }

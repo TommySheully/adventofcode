@@ -1,40 +1,17 @@
 package day_4
 
 import (
-	"bufio"
 	"fmt"
-	"os"
 )
 
-type command struct {
-	line  string
-}
-
-func ReadInput() []command {
-	// file, _ := os.Open("day_4/test.txt")
-	file, _ := os.Open("day_4/input.txt")
-	defer file.Close()
-
-	var commands []command
-	scanner := bufio.NewScanner(file)
-
-	for scanner.Scan() {
-		line := scanner.Text()
-		if line != "" {
-			commands = append(commands, command{
-				line: line,
-			})
-		}
-	}
-
-	return commands
-}
-
-func Day4Star1() int {
+func Day4Star2() int {
 	day4Input := ReadInput()
 
 	res := 0
 	rows := len(day4Input)
+
+  for {
+	  found := false
 
 	for i := 0; i < rows; i++ {
 		  line := day4Input[i].line
@@ -71,11 +48,20 @@ func Day4Star1() int {
 
 				if count < 4 {
 					res++
+
+					day4Input[i].line = day4Input[i].line[:j] + "x" + day4Input[i].line[j+1:]
+
+					found = true
 				}
 			}
 	}
 
-	fmt.Println("day4Input", res)
+	if !found {
+	  break
+	}
+  }
+
+	fmt.Println("Day4Star2", res)
 
 	return res
 }
